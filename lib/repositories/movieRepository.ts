@@ -306,3 +306,17 @@ export async function updateMovie(
     },
   );
 }
+
+export async function deleteMovie(movieId: number) {
+  return withTransaction(async (connection) => {
+    const [result] = await connection.execute<ResultSetHeader>(
+      `
+        DELETE FROM movies
+        WHERE movie_id = ?
+      `,
+      [movieId],
+    );
+
+    return result.affectedRows > 0;
+  });
+}

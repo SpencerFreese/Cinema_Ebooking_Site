@@ -12,6 +12,7 @@ import {
 } from "@/lib/services/genreService";
 import AdminPageHeader from "@/app/admin/components/AdminPageHeader";
 import MovieForm from "@/app/admin/movies/components/MovieForm";
+import DeleteMovieButton from "@/app/admin/movies/components/DeleteMovieButton";
 
 export const dynamic = "force-dynamic";
 
@@ -101,6 +102,11 @@ export default async function EditMoviePage({
 
           genreIds,
         }}
+      />
+      
+      <DeleteMovieButton
+        movieId={movie.movieId}
+        title={movie.title}
       />
     </main>
   );

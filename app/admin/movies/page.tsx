@@ -61,6 +61,12 @@ export default async function ManageMoviesPage({
         </p>
       ) : null}
 
+      {success === "deleted" ? (
+        <p className="rounded-lg bg-emerald-50 px-4 py-3 text-sm text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
+          Movie deleted successfully.
+        </p>
+      ) : null}
+
       <section className="grid gap-6 md:grid-cols-2">
         <article className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-800">
           <h2 className="text-xl font-semibold">
