@@ -1,4 +1,4 @@
-export type MovieStatus = "currently_playing" | "coming_soon";
+export type MovieStatus = "currently_playing" | "coming_soon" | "inactive";
 
 export type GenreOption = {
   genreId: number;

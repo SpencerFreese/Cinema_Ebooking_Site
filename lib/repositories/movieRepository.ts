@@ -30,6 +30,7 @@ export type MovieFilters = {
   searchTerm?: string;
   genres?: string[];
   showDate?: string;
+  includeInactive?: boolean;
 };
 
 export type MovieWriteInput = {
@@ -80,6 +81,8 @@ export async function findMovies(filters: MovieFilters = {}) {
   if (filters.status) {
     whereClauses.push("m.status = ?");
     params.push(filters.status);
+  } else if (!filters.includeInactive) {
+    whereClauses.push("m.status <> 'inactive'");
   }
 
   if (filters.searchTerm?.trim()) {

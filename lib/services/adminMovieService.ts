@@ -140,7 +140,8 @@ async function normalizeMovieInput(
   if (
     status !==
       "currently_playing" &&
-    status !== "coming_soon"
+    status !== "coming_soon" &&
+    status !== "inactive"
   ) {
     throw new AdminMovieValidationError(
       "Invalid movie status.",

@@ -29,7 +29,7 @@ export default async function ManageMoviesPage({
   const [{ success }, movies] =
     await Promise.all([
       searchParams,
-      findMovies(),
+      findMovies({ includeInactive: true }),
     ]);
 
   const movieOptions = movies.map(

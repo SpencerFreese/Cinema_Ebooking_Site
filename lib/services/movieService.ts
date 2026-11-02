@@ -49,7 +49,7 @@ export async function getMovieDetails(movieId: number) {
 
   const movie = await findMovieById(movieId);
 
-  if (!movie) {
+  if (!movie || movie.status === "inactive") {
     return null;
   }
 

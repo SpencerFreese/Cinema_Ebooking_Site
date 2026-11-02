@@ -345,6 +345,10 @@ export default function MovieForm({
             <option value="currently_playing">
               Currently Playing
             </option>
+
+            <option value="inactive">
+              Inactive (hidden from the public site)
+            </option>
           </select>
         </div>
 
